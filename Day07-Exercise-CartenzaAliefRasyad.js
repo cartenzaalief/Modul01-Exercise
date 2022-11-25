@@ -80,8 +80,8 @@ let switchData = (arr) => {
   let switchResult = [];
   let objSwitch = {};
 
-  for (i = 0; i < arr.length; i++) {
-    for (j = 0; j < Object.keys(arr[i]).length; j++) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < Object.keys(arr[i]).length; j++) {
       objSwitch[Object.values(arr[i])[j]] = Object.keys(arr[i])[j];
     }
 
