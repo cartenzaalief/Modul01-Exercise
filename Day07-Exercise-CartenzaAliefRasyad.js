@@ -37,8 +37,6 @@ console.log(`Does these objects equal? ${equalResult}`);
 /////////////////////////////////////////////////
 // 2.
 
-// NOTE: TIDAK TAU CARA UNTUK MEMUNCULKAN VALUE PADA HASIL INTERSECTION
-
 const firstObj = { a: 1, b: 2 };
 
 const secondObj = { a: 1, c: 3 };
@@ -51,7 +49,7 @@ let intersection = (obj1, obj2) => {
 };
 
 let intersecResult = intersection(firstObj, secondObj);
-console.log(`The intersection of two objects: ${intersecResult}`);
+console.log(intersecResult);
 
 /////////////////////////////////////////////////
 // 3.
@@ -76,18 +74,25 @@ console.log("Merged array:", arrayReduce);
 //////////////////////////////////////////////////
 // 4.
 
-// NOTE: BINGUNG TOTAL
+let arrSwitch = [{ name: "David", age: 20 }];
 
-let input = [{ name: "David", age: 20 }];
+let switchData = (arr) => {
+  let switchResult = [];
+  let objSwitch = {};
 
-const output = (arr) => {
-  for (let i = 0; i < arr.length * 2; i++) {
-    const key = Object.keys(arr[i]);
-    console.log(key[i]);
+  for (i = 0; i < arr.length; i++) {
+    for (j = 0; j < Object.keys(arr[i]).length; j++) {
+      objSwitch[Object.values(arr[i])[j]] = Object.keys(arr[i])[j];
+    }
+
+    switchResult.push(objSwitch);
   }
+
+  return switchResult;
 };
 
-const result = output(input);
+let switchDataResult = switchData(arrSwitch)
+console.log(switchDataResult);
 
 ////////////////////////////////////////////////////
 // 5.
